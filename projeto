@@ -1,0 +1,60 @@
+listaRE = []
+listaPAR = []
+listaLO = []
+def exibirMenu():
+    print("1 - adicionar nova reunião")
+    print("2 - adicionar local")
+    print("3 - Excluir reunião")
+    print("4 - Listar reuniões")
+    print("5 - adicionar ata da reunião ")
+    print("6 - adicionar participante")
+    print("7 - Sair")
+
+    opcao = int(input("Escolha uma opcao: "))
+    return opcao
+
+def inserirRE():
+    novoRE = input("Digite o nome da reunião e local da reunião: ")
+    listaRE.append(novoRE)
+
+def inserirPAR():
+    novoRE = input("Adicionar participante a reunião ")
+    listaRE.append(novoRE)
+
+def inserirLO():
+    novoRE = input("Adicionar local da reuinião ")
+    listaRE.append(novoRE)
+
+def listarRE():
+    for elemento in listaRE:
+        print (elemento)
+
+def excluirRE():
+    nomeRE = input("Nome da reunião que deseja excluir:")
+    indice = -1
+    encontrou = False
+    for elemento in listaRE:
+        indice += 1
+        if elemento == nomeRE:
+            encontrou = True
+            break
+    if (encontrou):
+        del listaRE[indice]
+
+while True:
+    opcao = exibirMenu()
+    if opcao == 5:
+        break
+    elif opcao == 4:
+        listarRE()
+    elif opcao == 1:
+        inserirRE()
+    elif opcao == 3:
+        excluirRE()
+    elif opcao == 6:
+        inserirPAR()
+    elif opcao == 2:
+        inserirLO()
+
+
+main()
